@@ -1,0 +1,33 @@
+PERFIL ONLINE — CARLOS LOPES DOS SANTOS
+Tema: Python & programação · HTML + CSS + JavaScript puros (sem frameworks, sem internet)
+BILINGUE: botões PT | EN no canto superior direito do cabeçalho — estão SEMPRE
+visíveis (também no telemóvel, fora do menu). Um clique troca toda a página
+entre português e inglês e o site lembra a escolha (localStorage).
+Também aceita ?lang=en no endereço.
+
+FICHEIROS
+- index.html ........ página principal
+- styles.css ........ todo o design e animações CSS
+- script.js ......... animações e interações (menu, escrita automática, partículas,
+                      contadores, barras de competência, filtro de projetos, tilt 3D)
+- assets/foto-carlos.jpg .................. fotografia do perfil
+- assets/CV_Carlos_Lopes_dos_Santos.pdf ... CV ligado nos botões "Descarregar CV"
+
+COMO ABRIR NO PC
+Faz duplo clique em index.html — abre no navegador, sem servidor.
+
+COMO PUBLICAR DE GRAÇA (escolhe uma)
+1) GitHub Pages: cria um repositório, envia estes ficheiros (index.html na raiz)
+   e ativa Settings → Pages → branch main. O teu GitHub: github.com/santosnancy
+2) Netlify / Vercel: arrasta esta pasta para o painel de deploy — fica online em minutos.
+3) PythonAnywhere: sobe a pasta e serve como ficheiros estáticos, ou aponta uma
+   web app para esta pasta.
+
+PARA EDITAR
+- Textos: edita index.html
+- Cores/tema: variáveis no topo de styles.css (--py-blue, --py-yellow, --bg)
+- Funções animadas no hero: lista "roles" no topo de script.js
+- Percentagens das competências: atributo data-level em index.html
+
+Nota: os únicos contactos usados são os teus reais (email, WhatsApp,
+LinkedIn e GitHub) — nada foi inventado.

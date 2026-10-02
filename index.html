@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Lopes dos Santos — Engenheiro de Software | Python & Django</title>
+  <meta name="description" id="metaDesc" content="Perfil profissional de Carlos Lopes dos Santos, engenheiro de software angolano especializado em Python, Django, sistemas de gestão e websites institucionais.">
+  <meta property="og:title" content="Carlos Lopes dos Santos — Python & Django Developer">
+  <meta property="og:description" content="Sistemas web e desktop práticos para escolas, empresas e instituições em Angola.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/foto-carlos.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23FFD343' font-family='Arial' font-weight='bold'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+
+  <header class="site-header" id="topo">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="logo" href="#inicio" aria-label="Voltar ao início">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span class="logo-text">Carlos<strong>.dev</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#competencias" data-i18n="nav.skills">Competências</a></li>
+        <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+        <li><a href="#experiencia" data-i18n="nav.experience">Experiência</a></li>
+        <li><a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contactar</a></li>
+      </ul>
+      <div class="lang-switch header-lang" role="group" aria-label="Language / Língua">
+        <button class="lang-btn active" data-lang="pt" type="button">PT</button>
+        <span aria-hidden="true">|</span>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero container" id="inicio">
+      <div class="hero-text reveal">
+        <p class="kicker"><span class="pulse-dot"></span> <span data-i18n="hero.kicker">Engenheiro de Software · Cazenga, Luanda — Angola</span></p>
+        <h1>Carlos Lopes<br>dos Santos</h1>
+        <p class="typed-line" aria-live="polite">
+          <span class="typed-prefix">&gt;&gt;&gt;</span>
+          <span id="typedRole">Desenvolvedor Python</span><span class="caret" aria-hidden="true"></span>
+        </p>
+        <p class="hero-sub" data-i18n="hero.sub">
+          Transformo problemas reais de escolas, empresas e instituições em software prático:
+          sistemas de gestão, websites e plataformas em <strong>Python &amp; Django</strong> —
+          rápidos, leves e pensados para funcionar bem no contexto angolano, mesmo com internet fraca.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projetos" data-i18n="hero.btnProjects">Ver projetos</a>
+          <a class="btn btn-ghost" href="assets/CV_Carlos_Lopes_dos_Santos.pdf" download data-i18n="hero.btnCv">Descarregar CV</a>
+          <a class="btn btn-whats" href="https://wa.me/244924914148?text=Ol%C3%A1%20Carlos%2C%20vi%20o%20teu%20perfil%20online%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <dl class="stats" aria-label="Resumo em números">
+          <div class="stat"><dt><span class="count" data-count="7">0</span>+</dt><dd data-i18n="stats.years">anos de experiência</dd></div>
+          <div class="stat"><dt><span class="count" data-count="10">0</span>+</dt><dd data-i18n="stats.projects">projetos entregues</dd></div>
+          <div class="stat"><dt><span class="count" data-count="2">0</span></dt><dd data-i18n="stats.countries">países: Angola e Uganda</dd></div>
+          <div class="stat"><dt><span class="count" data-count="8">0</span>+</dt><dd data-i18n="stats.tech">tecnologias principais</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-side reveal">
+        <div class="profile-card tilt" id="profileCard">
+          <div class="profile-photo">
+            <img src="assets/foto-carlos.jpg" alt="Fotografia de Carlos Lopes dos Santos" width="480" height="640" data-i18n-alt="profile.alt">
+          </div>
+          <div class="profile-meta">
+            <p class="profile-name">Eng. Carlos Lopes dos Santos</p>
+            <p class="profile-role" data-i18n="profile.role">Software Engineer · Python / Django</p>
+          </div>
+          <span class="badge badge-py">Python</span>
+          <span class="badge badge-dj">Django</span>
+          <span class="badge badge-js">JavaScript</span>
+        </div>
+
+        <div class="terminal" role="img" aria-label="Janela de terminal Python com o resumo do perfil">
+          <div class="terminal-bar"><span></span><span></span><span></span><em data-i18n="terminal.title">perfil.py — terminal</em></div>
+          <pre class="terminal-body" id="terminalBody"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section container" id="sobre">
+      <div class="section-head reveal">
+        <p class="section-tag" data-i18n="about.tag">01 · Sobre mim</p>
+        <h2 data-i18n="about.title">Software com propósito, feito para o terreno</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n="about.p1">
+            Sou engenheiro de software formado pela <strong>Universidade de Bugema</strong> (Kampala, Uganda),
+            com certificação <strong>CCNA</strong> e uma carreira construída entre o Uganda e Angola — do
+            desenvolvimento de software e apoio TIC em universidades e organizações, ao ensino técnico
+            e a projetos de literacia digital.
+          </p>
+          <p data-i18n="about.p2">
+            Hoje concentro-me em criar <strong>sistemas de gestão e plataformas web em Python/Django</strong>:
+            gestão escolar, portais institucionais e municipais, ferramentas para agentes bancários e
+            soluções de saúde digital. O meu princípio é simples: o software tem de resolver o problema
+            de quem o usa todos os dias — com poucos cliques, sem depender de ligações caras e sem
+            complicar o que devia ser simples.
+          </p>
+          <p data-i18n="about.p3">
+            Também trabalho com formação: já apoiei professores em literacia digital e e-learning
+            (ADPP, Malanje) e lecionei informática e inglês no ensino técnico (ITPSF).
+          </p>
+        </div>
+        <aside class="info-card reveal" aria-label="Dados rápidos">
+          <h3 data-i18n="info.title">Dados rápidos</h3>
+          <ul>
+            <li><span data-i18n="info.locLabel">Localização</span><strong data-i18n="info.loc">Cazenga, Luanda — Angola</strong></li>
+            <li><span>Email</span><strong><a href="mailto:cldossantos05@gmail.com">cldossantos05@gmail.com</a></strong></li>
+            <li><span data-i18n="info.phoneLabel">Telefone</span><strong><a href="tel:+244924914148">+244 924 914 148</a></strong></li>
+            <li><span data-i18n="info.areasLabel">Áreas</span><strong data-i18n="info.areas">Web, Desktop, SaaS, TIC &amp; Redes</strong></li>
+            <li><span data-i18n="info.availLabel">Disponível para</span><strong data-i18n="info.avail">Projetos, consultoria e parcerias</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ COMPETÊNCIAS ============ -->
+    <section class="section container" id="competencias">
+      <div class="section-head reveal">
+        <p class="section-tag" data-i18n="skills.tag">02 · Competências</p>
+        <h2 data-i18n="skills.title">A minha caixa de ferramentas</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3 data-i18n="skills.c1">Backend &amp; Dados</h3>
+          <div class="bar"><span>Python</span><div class="track"><i data-level="95"></i></div><em>95%</em></div>
+          <div class="bar"><span>Django / DRF</span><div class="track"><i data-level="92"></i></div><em>92%</em></div>
+          <div class="bar"><span>SQLite / PostgreSQL</span><div class="track"><i data-level="88"></i></div><em>88%</em></div>
+          <p class="chips"><span data-i18n="chips.rest">APIs REST</span><span>ReportLab</span><span data-i18n="chips.automation">Automação</span></p>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Frontend</h3>
+          <div class="bar"><span>HTML5 / CSS3</span><div class="track"><i data-level="90"></i></div><em>90%</em></div>
+          <div class="bar"><span>JavaScript</span><div class="track"><i data-level="82"></i></div><em>82%</em></div>
+          <div class="bar"><span data-i18n="skills.responsive">Design responsivo</span><div class="track"><i data-level="88"></i></div><em>88%</em></div>
+          <p class="chips"><span data-i18n="chips.light">Interfaces leves</span><span data-i18n="chips.nocdn">Sem CDNs</span><span>PT / EN</span></p>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-i18n="skills.c3">Desktop &amp; Entrega</h3>
+          <div class="bar"><span data-i18n="skills.tkinter">Tkinter (apps desktop)</span><div class="track"><i data-level="90"></i></div><em>90%</em></div>
+          <div class="bar"><span>Git / GitHub</span><div class="track"><i data-level="85"></i></div><em>85%</em></div>
+          <div class="bar"><span data-i18n="skills.tests">Testes &amp; validação</span><div class="track"><i data-level="90"></i></div><em>90%</em></div>
+          <p class="chips"><span data-i18n="chips.installers">Instaladores</span><span data-i18n="chips.licensing">Licenciamento offline</span><span>Backups</span></p>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-i18n="skills.c4">Redes &amp; Sistemas</h3>
+          <div class="bar"><span data-i18n="skills.networks">Redes (CCNA)</span><div class="track"><i data-level="85"></i></div><em>85%</em></div>
+          <div class="bar"><span>Windows / Linux</span><div class="track"><i data-level="86"></i></div><em>86%</em></div>
+          <div class="bar"><span data-i18n="skills.support">Suporte TIC</span><div class="track"><i data-level="90"></i></div><em>90%</em></div>
+          <p class="chips"><span data-i18n="chips.training">Formação de utilizadores</span><span>E-learning</span><span data-i18n="chips.maintenance">Manutenção</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <section class="section container" id="projetos">
+      <div class="section-head reveal">
+        <p class="section-tag" data-i18n="projects.tag">03 · Projetos</p>
+        <h2 data-i18n="projects.title">Projetos em destaque</h2>
+      </div>
+
+      <div class="filters reveal" role="group" aria-label="Filtrar projetos">
+        <button class="filter-btn active" data-filter="todos" data-i18n="filter.all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="desktop">Desktop</button>
+        <button class="filter-btn" data-filter="saas">SaaS</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card tilt reveal" data-category="desktop">
+          <p class="project-kind" data-i18n="proj1.kind">Desktop · Educação</p>
+          <h3>QuiocambaEdu (EduFinal)</h3>
+          <p data-i18n="proj1.desc">Sistema completo de gestão escolar para Windows: estudantes, notas, propinas, documentos oficiais, exames e licenciamento offline por máquina.</p>
+          <p class="tags"><span>Python</span><span>Tkinter</span><span>SQLite</span><span>ReportLab</span></p>
+        </article>
+
+        <article class="project-card tilt reveal" data-category="saas web">
+          <p class="project-kind" data-i18n="proj2.kind">SaaS · Educação</p>
+          <h3>EduQuiocamba</h3>
+          <p data-i18n="proj2.desc">Plataforma multi-escola na nuvem: matrículas, pagamentos Multicaixa, documentos com verificação por QR, relatórios oficiais e portal das famílias.</p>
+          <p class="tags"><span>Django</span><span>Multi-tenant</span><span>PostgreSQL</span></p>
+        </article>
+
+        <article class="project-card tilt reveal" data-category="web">
+          <p class="project-kind" data-i18n="proj3.kind">Web · Portal provincial</p>
+          <h3>Malanje Digital</h3>
+          <p data-i18n="proj3.desc">Portal digital da província de Malanje: serviços ao cidadão, saúde com triagem de sintomas e marcação de consultas, notícias e gestão municipal — bilingue PT/EN.</p>
+          <p class="tags"><span>Django</span><span>HTML/CSS/JS</span><span>i18n</span></p>
+        </article>
+
+        <article class="project-card tilt reveal" data-category="saas web">
+          <p class="project-kind" data-i18n="proj4.kind">SaaS · Finanças</p>
+          <h3>Agente+</h3>
+          <p data-i18n="proj4.desc">Gestão diária para agentes bancários correspondentes: float, cartões, movimentos, fecho de caixa e leitura inteligente da operação.</p>
+          <p class="tags"><span>Django</span><span data-i18n="tag.reports">Relatórios</span><span>Offline-first</span></p>
+        </article>
+
+        <article class="project-card tilt reveal" data-category="web">
+          <p class="project-kind" data-i18n="proj5.kind">Web · Saúde</p>
+          <h3>NeoPACS</h3>
+          <p data-i18n="proj5.desc">Sistema PACS para imagem médica sobre o motor DICOM Orthanc: estudos, visualização e fluxo clínico pensado para hospitais com recursos limitados.</p>
+          <p class="tags"><span>Django</span><span>DICOM</span><span>Orthanc</span></p>
+        </article>
+
+        <article class="project-card tilt reveal" data-category="web">
+          <p class="project-kind" data-i18n="proj6.kind">Web · Institucional</p>
+          <h3>ISCAT &amp; Missão Nordeste</h3>
+          <p data-i18n="proj6.desc">Websites institucionais completos em Django: admissões e candidaturas online, documentos, notícias, galerias e páginas de departamentos.</p>
+          <p class="tags"><span>Django</span><span data-i18n="tag.design">Design próprio</span><span data-i18n="tag.responsive">Responsivo</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIA ============ -->
+    <section class="section container" id="experiencia">
+      <div class="section-head reveal">
+        <p class="section-tag" data-i18n="exp.tag">04 · Percurso</p>
+        <h2 data-i18n="exp.title">Experiência &amp; formação</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <p class="when" data-i18n="exp1.when">Abr — Ago 2026</p>
+          <div>
+            <h3 data-i18n="exp1.h3">Barragem Hidroelétrica de Caculo Cabaça — Cuanza Norte</h3>
+            <p data-i18n="exp1.p">Ajudante no Departamento de Electromecânica, em ambiente industrial de grande escala.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <p class="when" data-i18n="exp2.when">Nov 2024 — Fev 2025</p>
+          <div>
+            <h3 data-i18n="exp2.h3">ADPP — Projeto de Melhoria da Educação nas Zonas Rurais · Mucari, Malanje</h3>
+            <p data-i18n="exp2.p">Engenheiro Informático e organizador local: componente de e-learning e literacia digital para professores.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <p class="when">2022 — 2024</p>
+          <div>
+            <h3>ITPSF — Instituto Técnico Privado de Saúde Fonte do Saber</h3>
+            <p data-i18n="exp3.p">Professor de Inglês e Técnico de Informática: ensino técnico e apoio aos sistemas da instituição.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <p class="when">2019 — 2022</p>
+          <div>
+            <h3 data-i18n="exp4.h3">Uganda — Software &amp; TIC</h3>
+            <p data-i18n="exp4.p">Engenheiro de Software na Perfect Pictures Media; Assistente TIC na Universidade Makerere; voluntário TIC no campo de refugiados de Rwamwanja.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <p class="when">2015 — 2019</p>
+          <div>
+            <h3 data-i18n="exp5.h3">Universidade de Bugema — Kampala, Uganda</h3>
+            <p data-i18n="exp5.p">Licenciatura em Engenharia de Software. Certificação <strong>CCNA</strong> (2018).</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section container" id="contacto">
+      <div class="contact-card reveal">
+        <h2 data-i18n="contact.title">Vamos construir alguma coisa?</h2>
+        <p data-i18n="contact.text">Precisas de um website, de um sistema de gestão ou de apoio TIC para a tua instituição?
+           Fala comigo — respondo em português e em inglês.</p>
+        <div class="hero-actions center">
+          <a class="btn btn-whats" href="https://wa.me/244924914148?text=Ol%C3%A1%20Carlos%2C%20vi%20o%20teu%20perfil%20online%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp · +244 924 914 148</a>
+          <a class="btn btn-primary" href="mailto:cldossantos05@gmail.com">cldossantos05@gmail.com</a>
+        </div>
+        <p class="socials">
+          <a href="https://www.linkedin.com/in/carlos-lopes-dos-santos-b7b322283/" target="_blank" rel="noopener">LinkedIn</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/santosnancy" target="_blank" rel="noopener">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="assets/CV_Carlos_Lopes_dos_Santos.pdf" download data-i18n="contact.cvLink">CV em PDF</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="foot.rights">© 2026 Carlos Lopes dos Santos · Cazenga, Luanda — Angola</p>
+    <p class="foot-note" data-i18n="foot.note">Feito com HTML, CSS e JavaScript — sem frameworks, leve e rápido.</p>
+    <a class="to-top" href="#inicio" id="toTop" aria-label="Voltar ao topo">↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
